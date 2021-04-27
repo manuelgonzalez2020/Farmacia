@@ -3,6 +3,6 @@ public class CamposVaciosException extends Exception{
 	private static final long serialVersionUID = 1L;
 	public CamposVaciosException(String campo) {
 		// TODO Auto-generated constructor stub
-		super("El campo "+campo+" est· vacÌo");
+		super("El campo "+campo+" est√° vac√≠o hijo de las 7 mil putas");
 	}
 }
