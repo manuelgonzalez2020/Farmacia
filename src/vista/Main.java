@@ -9,15 +9,14 @@ import excepciones.CamposVaciosException;
 import excepciones.CodigoBarrasException;
 import modelo.Medicamento;
 public class Main {
-	private static Scanner leer;
 	public Main() {
 		// TODO Auto-generated constructor stub
 	}
 	public static void main(String[] args) {
-		leer = new Scanner(System.in);
+		Scanner leer = new Scanner(System.in);
 		Medicamento medic=null;
 		try {
-			medic=new Medicamento("Ibuprofeno", "2021-03-24", "2021-04-03 20:03:23.334", "34.32", "Laboratorio de Análisis de Nottingham", "5901234123457");
+			medic=new Medicamento("Ibuprofeno", "2021-03-24", "2021-04-03 20:03:23.334", "34.32", "Laboratorio de AnÃ¡lisis de Nottingham", "5901234123457");
 			System.out.println(medic);
 		} catch (CamposVaciosException | CodigoBarrasException | ParseException e) {
 			// TODO Auto-generated catch block
@@ -56,28 +55,28 @@ public class Main {
 				}
 				break;
 			case 3:
-				System.out.println("Introduzca el código de barras");
+				System.out.println("Introduzca el cÃ³digo de barras");
 				String codBarras=leer.next();
 				medic=listMed.buscarMedicamento(codBarras);
 				if(medic!=null) System.out.println(medic);
-				else System.err.println("No se encontró el medicamento");
+				else System.err.println("No se encontrÃ³ el medicamento");
 				break;
 			case 4:
-				System.out.println("Introduzca el código de barras del medicamento a modificar");
+				System.out.println("Introduzca el cÃ³digo de barras del medicamento a modificar");
 				codBarras=leer.next();
 				System.out.println("Introduzca su nuevo precio");
 				String precio=leer.next();
 				if (listMed.modificarMedicamento(codBarras, precio)) System.out.println("Precio modificado");
-				else System.out.println("Error en la modificación");
+				else System.out.println("Error en la modificaciÃ³n");
 				break;
 			case 5:
-				System.out.println("Introduzca el código de barras del medicamento a retirar");
+				System.out.println("Introduzca el cÃ³digo de barras del medicamento a retirar");
 				codBarras=leer.next();
 				medic=listMed.buscarMedicamento(codBarras);
 				if(medic!=null) {
 					int op=0;
-					System.out.println("¿Desea retirar dicho medicamento?");
-					System.out.println("1.-Sí 2.-No");
+					System.out.println("Â¿Desea retirar dicho medicamento?");
+					System.out.println("1.-SÃ­ 2.-No");
 					op=leer.nextInt();
 					if(op==1) {
 						if(listMed.retirarMedicamento(medic)) System.out.println("Medicamento retirado correctamente");
