@@ -9,11 +9,12 @@ import excepciones.CamposVaciosException;
 import excepciones.CodigoBarrasException;
 import modelo.Medicamento;
 public class Main {
+	private static Scanner leer;
 	public Main() {
 		// TODO Auto-generated constructor stub
 	}
 	public static void main(String[] args) {
-		Scanner leer = new Scanner(System.in);
+		leer = new Scanner(System.in);
 		Medicamento medic=null;
 		try {
 			medic=new Medicamento("Ibuprofeno", "2021-03-24", "2021-04-03 20:03:23.334", "34.32", "Laboratorio de Análisis de Nottingham", "5901234123457");
